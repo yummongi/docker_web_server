@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+  tomcat1:
+    image: tomcat
+    container_name: tomcat
+    ports:
+      - 8080:8080
+    volumes:
+     - ./html/:/usr/local/tomcat/webapps/ROOT
+
