@@ -1,4 +1,4 @@
 ## Dockerfile이 있는 경로에서...
-> docker build -t flask:test .
+> sudo docker build -t flask:test .
 
-> docker build -t nginx:test .
+> sudo docker build -t nginx:test .
