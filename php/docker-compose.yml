@@ -40,3 +40,15 @@ services:
               echo "security.limit_extensions = .php .phtml .php3 .php4 .php5 .html .htm" >> /usr/local/etc/php-fpm.d/www.conf
               php-fpm
 
+   phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: pma
+        links:
+            - mysql
+        environment:
+        PMA_HOST: mysql
+        PMA_PORT: 3306
+        PMA_ARBITRARY: 1
+        restart: always
+        ports:
+        - 8081:80
